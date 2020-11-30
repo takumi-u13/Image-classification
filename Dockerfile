@@ -27,10 +27,10 @@ RUN pip install --upgrade pip && \
 	pip install flickrapi  && \
     pip install pillow && \
     pip install sklearn && \
-    pip install keras
+    pip install keras && \
+    pip install Flask
 
-WORKDIR /
 RUN mkdir /work
+WORKDIR /work
 
-# execute jupyterlab as a default command
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
+CMD ["python", "predict_file.py"]
